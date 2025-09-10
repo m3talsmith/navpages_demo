@@ -7,11 +7,9 @@ class Inny extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Navbar(title: 'Inny'),
-        Expanded(child: Center(child: Text('Inny'))),
-      ],
+    return NavPage(
+      navbar: Navbar(title: 'Inny'),
+      child: Center(child: Text('Inny')),
     );
   }
 }

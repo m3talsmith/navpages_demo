@@ -17,7 +17,18 @@ class Demo extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text('Demo'),
-                ElevatedButton(
+                FilledButton(
+                  onPressed: () {
+                    final navPages = NavPages.of(context);
+                    navPages.setDirection(
+                      navPages.direction == NavPagesDirection.horizontal
+                          ? NavPagesDirection.vertical
+                          : NavPagesDirection.horizontal,
+                    );
+                  },
+                  child: Text('Toggle Direction'),
+                ),
+                FilledButton(
                   onPressed: () {
                     NavPages.of(context).push(Inner());
                   },
