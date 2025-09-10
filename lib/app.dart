@@ -19,6 +19,30 @@ class App extends StatelessWidget {
       home: Scaffold(
         body: NavPages(
           expandable: true,
+          navrailVerticleScrolling: true,
+          useFullHeader: true,
+          header: Container(
+            decoration: BoxDecoration(
+              color: Color.lerp(
+                Theme.of(context).colorScheme.primary,
+                Colors.black,
+                0.66,
+              ),
+            ),
+            padding: EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.navigation_rounded, size: 60, color: Colors.white),
+                Text(
+                  'NavPages Demo',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.displaySmall?.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
           buttons: [
             NavRailButton(label: 'Home', icon: Icons.home),
             NavRailButton(label: 'Demo', icon: Icons.code),
