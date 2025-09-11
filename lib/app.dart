@@ -4,6 +4,7 @@ import 'package:navpages/navpages.dart';
 import 'home.dart';
 import 'demo.dart';
 import 'counter.dart';
+import 'example_button.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -52,6 +53,7 @@ class App extends StatelessWidget {
             NavRailButton(label: 'Demo', icon: Icons.account_balance),
             NavRailButton(label: 'Counter', icon: Icons.access_alarm),
             NavRailButton(label: 'Counter', icon: Icons.access_time),
+            ExampleButton(label: 'Custom Btn', icon: Icons.work),
           ],
           actions: [
             NavRailButton(label: 'Settings', icon: Icons.settings),
@@ -89,6 +91,10 @@ class App extends StatelessWidget {
             NavPage(
               navbar: Navbar(title: 'Counter'),
               child: Counter(title: 'Counter'),
+            ),
+            NavPage(
+              navbar: Navbar(title: 'Example'),
+              child: Counter(title: 'Example'),
             ),
           ],
         ),
