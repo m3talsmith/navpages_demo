@@ -5,6 +5,7 @@ import 'home.dart';
 import 'demo.dart';
 import 'counter.dart';
 import 'example_button.dart';
+import 'plain.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -48,7 +49,7 @@ class App extends StatelessWidget {
             NavRailButton(label: 'Home', icon: Icons.home),
             NavRailButton(label: 'Demo', icon: Icons.code),
             NavRailButton(label: 'Counter', icon: Icons.coffee),
-            NavRailButton(label: 'Counter', icon: Icons.contact_emergency),
+            NavRailButton(label: 'Plain Widget', icon: Icons.contact_emergency),
             NavRailButton(label: 'Home', icon: Icons.ac_unit),
             NavRailButton(label: 'Demo', icon: Icons.account_balance),
             NavRailButton(label: 'Counter', icon: Icons.access_alarm),
@@ -72,10 +73,7 @@ class App extends StatelessWidget {
               navbar: Navbar(title: 'Counter'),
               child: Counter(title: 'Counter'),
             ),
-            NavPage(
-              navbar: Navbar(title: 'Counter'),
-              child: Counter(title: 'Counter'),
-            ),
+            Plain(),
             NavPage(
               navbar: Navbar(title: 'Home'),
               child: Home(),
