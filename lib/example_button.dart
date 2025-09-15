@@ -9,6 +9,7 @@ class ExampleButton extends NrButtonWidget {
     super.onTap,
     super.expanded = false,
     super.selected = false,
+    super.showSelected = true,
     super.width = 0,
     super.height = 0,
     super.selectedColor,
@@ -30,13 +31,19 @@ class ExampleButton extends NrButtonWidget {
         padding: EdgeInsets.all(8),
         margin: EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: selected ? selectedBackgroundColor : unselectedBackgroundColor,
+          color: (selected && showSelected)
+              ? selectedBackgroundColor
+              : unselectedBackgroundColor,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(
             label ?? 'oops',
-            style: TextStyle(color: selected ? selectedColor : unselectedColor),
+            style: TextStyle(
+              color: (selected && showSelected)
+                  ? selectedColor
+                  : unselectedColor,
+            ),
           ),
         ),
       ),
@@ -50,6 +57,7 @@ class ExampleButton extends NrButtonWidget {
     Function()? onTap,
     bool? expanded,
     bool? selected,
+    bool? showSelected,
     double? width,
     double? height,
     Color? selectedColor,
@@ -65,6 +73,7 @@ class ExampleButton extends NrButtonWidget {
     onTap: onTap ?? this.onTap,
     expanded: expanded ?? this.expanded,
     selected: selected ?? this.selected,
+    showSelected: showSelected ?? this.showSelected,
     width: width ?? this.width,
     height: height ?? this.height,
     selectedColor: selectedColor ?? this.selectedColor,

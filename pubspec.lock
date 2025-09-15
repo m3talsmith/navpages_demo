@@ -135,10 +135,10 @@ packages:
     dependency: "direct main"
     description:
       name: navpages
-      sha256: "66800215bff331e46a88e7a80a0b2925ce2081a8dd50ac0caf61b6acac4fcdf7"
+      sha256: "67c1d72599c1c6b0985e19e1defe04bc706b1dd7c893102a3c31bb2292eeff47"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   path:
     dependency: transitive
     description:
