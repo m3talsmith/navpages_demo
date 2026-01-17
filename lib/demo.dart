@@ -74,6 +74,18 @@ class Demo extends StatelessWidget {
                 },
                 child: Text('Move Rail Down'),
               ),
+              FilledButton(
+                onPressed: () {
+                  NavPages.of(context).showFullscreenDialog(FullscreenDialog());
+                },
+                child: Text('Show Fullscreen Dialog'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  NavPages.of(context).showDialog(Dialog());
+                },
+                child: Text('Show Dialog'),
+              ),
             ],
           ),
           GridView.count(
@@ -126,58 +138,48 @@ class Demo extends StatelessWidget {
   }
 }
 
-// NavPage(
-//   navbar: Navbar(title: 'Positional'),
-//   child: Column(
-//     mainAxisSize: MainAxisSize.min,
-//     spacing: 8,
-//     children: [
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Toggle Display Direction'),
-//       ),
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Toggle Fullscreen'),
-//       ),
-//       FilledButton(onPressed: () {}, child: Text('Move Rail Left')),
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Move Rail Right'),
-//       ),
-//       FilledButton(onPressed: () {}, child: Text('Move Rail Up')),
-//       FilledButton(onPressed: () {}, child: Text('Move Rail Down')),
-//     ],
-//   ),
-// ),
-// NavPage(
-//   navbar: Navbar(title: 'Contextual'),
-//   child: Column(
-//     mainAxisSize: MainAxisSize.min,
-//     spacing: 8,
-//     children: [
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Toggle Full Header'),
-//       ),
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Toggle Full Footer'),
-//       ),
-//     ],
-//   ),
-// ),
-// NavPage(
-//   navbar: Navbar(title: 'Navigational'),
-//   child: Column(
-//     mainAxisSize: MainAxisSize.min,
-//     spacing: 8,
-//     children: [
-//       FilledButton(onPressed: () {}, child: Text('Push Inner')),
-//       FilledButton(
-//         onPressed: () {},
-//         child: Text('Push Inner Fullscreen'),
-//       ),
-//     ],
-//   ),
-// ),
+class FullscreenDialog extends StatelessWidget {
+  const FullscreenDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Center(
+        child: FilledButton(
+          onPressed: () {
+            NavPages.of(context).hideFullscreenDialog();
+          },
+          child: Text('Close Fullscreen Dialog'),
+        ),
+      ),
+    );
+  }
+}
+
+class Dialog extends StatelessWidget {
+  const Dialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Center(
+        child: FilledButton(
+          onPressed: () {
+            NavPages.of(context).hideDialog();
+          },
+          child: Text('Close Dialog'),
+        ),
+      ),
+    );
+  }
+}
